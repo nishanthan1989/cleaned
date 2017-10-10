@@ -1,0 +1,6 @@
+install:
+  - npm install # make sure to install the deps when Travis runs.
+after_success:
+- export LH_MIN_PASS_SCORE=95
+- export LH_TEST_URL=https://pbauardev1.pacificbrands.local/test/nishanthan1989/OI-1164-Checkout-treats-lack-of-Tax-as-a-discount/bonds
+- node runLighthouse.js $LH_TEST_URL $LH_MIN_PASS_SCORE
